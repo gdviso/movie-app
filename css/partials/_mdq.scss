@@ -1,0 +1,78 @@
+@media (max-width: 1130px) {
+	.castWrap{
+		justify-content:flex-start!important;		
+	}
+	.castContainer{
+		width: 30%!important;
+	}
+}
+@media (max-width: 940px) {
+	.moreInfo{
+		flex-wrap:wrap!important;
+		flex-direction:column;
+		align-items:center;
+	}
+	.result{
+		padding-top: 30px!important;
+	}
+	.poster{
+		margin-bottom: 30px;
+		width: 300px!important;
+	}
+	.about{
+		width: 95%!important;
+	}
+}
+@media (max-width: 550px) {
+	.logo img{
+		max-width: 350px;
+		max-height: 60px;
+	}
+	.castContainer {
+    width: 50% !important;
+	}
+	.toggle-menu li{
+		font-size: 13px;
+		margin-top: 5px;
+	}
+}
+@media (max-width: 400px) {
+	.title{
+		display: none!important;
+	}
+	.about h2{
+		font-size: 28px!important;
+	}
+	
+	.title h3{
+		max-width: 350px;
+		font-size: 15px;
+	 }	
+	 .logo{
+	 	margin-top:5px!important;
+	 	margin-bottom: 10px!important;
+	 }
+	.select2-container .select2-selection--single .select2-selection__rendered{
+		overflow: visible!important;
+	}
+	.castContainer {
+	    width: 100% !important;
+	}
+	.selectBox{
+		margin-right: 5px!important;
+	}
+	.toggle-menu{
+		margin-top: 0!important;
+	}
+	ul.aboutText {
+    padding-left: 0px;
+	}
+	.toggle-menu .toggle{
+		padding: 0 5px!important;
+	}
+	.carousel-cell.movieBox img{
+		    height: 400px!important;
+    max-width: 250px!important;
+	}
+
+}

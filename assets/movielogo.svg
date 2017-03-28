@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="281px" height="279px" viewBox="0 0 281 279" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>movielogo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="55.2394837%" id="radialGradient-1">
+            <stop stop-color="#FB6666" offset="0%"></stop>
+            <stop stop-color="#CF0404" offset="100%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="100%" id="radialGradient-2">
+            <stop stop-color="#FB6666" offset="0%"></stop>
+            <stop stop-color="#CF0404" offset="100%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="45.7029819%" id="radialGradient-3">
+            <stop stop-color="#FB6666" offset="0%"></stop>
+            <stop stop-color="#CF0404" offset="100%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" id="radialGradient-4">
+            <stop stop-color="#EA0909" offset="0%"></stop>
+            <stop stop-color="#CF0404" offset="100%"></stop>
+        </radialGradient>
+        <polygon id="path-5" points="110 127 139 185 81 185"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="3" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="url(#radialGradient-1)" cx="48" cy="48" r="48"></circle>
+        <circle id="Oval" fill="url(#radialGradient-1)" cx="156" cy="48" r="48"></circle>
+        <rect id="Rectangle" fill="url(#radialGradient-2)" x="0" y="106" width="204" height="100" rx="10"></rect>
+        <path d="" id="Path-2"></path>
+        <path d="" id="Path-3"></path>
+        <path d="M211,144.544592 C211,141.785652 213.057057,138.680744 215.606422,137.60458 L276.393578,111.944508 C278.937634,110.870586 281,112.246669 281,115.009299 L281,192.327618 C281,195.094178 278.905039,196.564277 276.312055,195.607963 L215.687945,173.249266 C213.098864,172.29439 211,169.272157 211,166.524807 L211,144.544592 Z" id="Rectangle-2" fill="url(#radialGradient-3)"></path>
+        <rect id="Rectangle-3" fill="url(#radialGradient-4)" x="67" y="211" width="71" height="17"></rect>
+        <rect id="Rectangle-3" fill="#CF0404" x="81" y="227" width="42" height="11"></rect>
+        <rect id="Rectangle-3" fill="#CF0404" transform="translate(102.500000, 258.000000) rotate(90.000000) translate(-102.500000, -258.000000) " x="81.5" y="252.5" width="42" height="11"></rect>
+        <rect id="Rectangle-3" fill="#CF0404" transform="translate(86.500000, 254.000000) rotate(119.000000) translate(-86.500000, -254.000000) " x="65.5" y="248.5" width="42" height="11"></rect>
+        <rect id="Rectangle-3" fill="#CF0404" transform="translate(118.991410, 255.033467) rotate(-119.000000) translate(-118.991410, -255.033467) " x="97.9914104" y="249.533467" width="42" height="11"></rect>
+        <g id="Triangle" transform="translate(110.000000, 156.000000) rotate(90.000000) translate(-110.000000, -156.000000) ">
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+        </g>
+    </g>
+</svg>
