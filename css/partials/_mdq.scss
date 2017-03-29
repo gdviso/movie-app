@@ -1,47 +1,62 @@
 @media (max-width: 1130px) {
 	.castWrap{
-		justify-content:flex-start!important;		
+		justify-content:flex-start;		
 	}
 	.castContainer{
-		width: 30%!important;
+		width: 30%;
 	}
 }
 @media (max-width: 940px) {
 	.moreInfo{
-		flex-wrap:wrap!important;
+		flex-wrap:wrap;
 		flex-direction:column;
 		align-items:center;
 	}
 	.result{
-		padding-top: 30px!important;
+		padding-top: 30px;
 	}
 	.poster{
 		margin-bottom: 30px;
-		width: 300px!important;
+		width: 300px;
 	}
 	.about{
-		width: 95%!important;
+		width: 95%;
+		margin-right: 0;
+	}
+	section.trailer{
+		padding-top: 17%;
 	}
 }
 @media (max-width: 550px) {
 	.logo img{
 		max-width: 350px;
 		max-height: 60px;
+		margin-top: 30px;
+	}
+	.selectionBoxes{
+		margin-bottom: 20px;
 	}
 	.castContainer {
-    width: 50% !important;
+    width: 50% ;
 	}
 	.toggle-menu li{
 		font-size: 13px;
 		margin-top: 5px;
 	}
+	section.trailer{
+		padding-top: 45%;
+	}
+	.seeBtn{
+		position: absolute;
+		height: 100%;
+		top:0;
+		left: 0;
+		opacity: 0;
+	}
 }
 @media (max-width: 400px) {
-	.title{
-		display: none!important;
-	}
 	.about h2{
-		font-size: 28px!important;
+		font-size: 28px;
 	}
 	
 	.title h3{
@@ -49,30 +64,38 @@
 		font-size: 15px;
 	 }	
 	 .logo{
-	 	margin-top:5px!important;
-	 	margin-bottom: 10px!important;
+	 	margin-top:5px;
+	 	margin-bottom: 10px;
 	 }
 	.select2-container .select2-selection--single .select2-selection__rendered{
-		overflow: visible!important;
+		overflow: visible;
 	}
 	.castContainer {
-	    width: 100% !important;
+	    width: 100% ;
 	}
 	.selectBox{
-		margin-right: 5px!important;
+		margin-right: 5px;
 	}
 	.toggle-menu{
-		margin-top: 0!important;
+		margin-top: 0;
 	}
 	ul.aboutText {
     padding-left: 0px;
 	}
 	.toggle-menu .toggle{
-		padding: 0 5px!important;
+		padding: 0 5px;
 	}
 	.carousel-cell.movieBox img{
-		    height: 400px!important;
-    max-width: 250px!important;
+		    height: 400px;
+    max-width: 250px;
+	}
+	a.sideBtn{
+		width: 100%;
+		text-align: center;
+	}
+	.selectionBoxes {
+    margin-bottom: 30px;
+    margin-top: 30px;
 	}
 
 }

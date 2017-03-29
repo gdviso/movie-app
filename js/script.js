@@ -38,7 +38,7 @@ movieApp.getTrailer = function(id){
 		}
 	}).then(function(trailerData){
 		var trailerResult = trailerData.results;
-		var youtubeKey = (trailerResult[0].key +`?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen`);
+		var youtubeKey = (trailerResult[0].key +`?rel=0&amp;showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen`);
 		$('iframe').attr('src', `http://www.youtube.com/embed/${youtubeKey}`);
 	});
 }
@@ -75,7 +75,7 @@ movieApp.getBackground = function(id){
 			$('.result').css('background', `${backLink}`)
 	});
 }
-
+//display cast
 movieApp.displayCasts = function(movieCast) {
 	var shortCast = [];
 	// for loop to reduce results to 5 cast members	
@@ -94,7 +94,7 @@ movieApp.displayCasts = function(movieCast) {
 		var displayCast = $('.castWrap').append(profileContainer);
 	});
 }
-
+//display info
 movieApp.displayData = function (movies) {
 	if(movieApp.flickityOn === true) {
 		$('.main-carousel').flickity('destroy')
@@ -105,7 +105,7 @@ movieApp.displayData = function (movies) {
 		var overview = mov.overview;
 		// filter only movies with posters:
 		if(mov.poster_path !== null){
-			var seeMore = $('<button>').text("See More").addClass('seeBtn').attr('data-index', index);
+			var seeMore = $('<button>').html(`<i class="fa fa-plus-circle" aria-hidden="true"></i> See More`).addClass('seeBtn').attr('data-index', index);
 			var posterEl = $('<img>').attr('src', `https://image.tmdb.org/t/p/w300/${poster}`);
 			var moviePoster = $('<div>').addClass('carousel-cell movieBox animated fadeInRight').attr("id","posters").append(posterEl,seeMore);
 			$('.main-carousel').append(moviePoster);
@@ -127,25 +127,24 @@ movieApp.displayData = function (movies) {
 			var rating = movieInfo.vote_average;
 			var overview = movieInfo.overview;
 			var poster = movieInfo.poster_path;
-		 	var backToTop = $('<a>').html("Back to movie").addClass('bottomBtn').attr('href','#');
+		 	var backToTop = $('<a>').html("close").addClass('bottomBtn').attr('href','#');
 		 	var watchTrailer = $('<a>').html("Watch Trailer").addClass('watchBtn').attr('href','#');
 		 	var titleEl = $('<h2>').text(title);
 			var dateEl = $('<h3>').addClass('date').html(`<span>Release Date: </span> ${date}`);
 			var ratingEl = $('<h3>').addClass('rating').html(`<span>Rating: </span> ${rating}/10`);
-			var overviewEl = $('<p>').addClass('overview').html(`<h3 class="overTitle">Overview:</h3> ${overview}`);
+			var overviewEl = $('<h3>').addClass('overview').html(`Overview <p>${overview}</p>`);
 			var trailer = $('<iframe>');
 			var posterEl = $('<img>').attr('src', `https://image.tmdb.org/t/p/w300/${poster}`);
 			var posterDiv = $('<div>').addClass('poster').append(posterEl,watchTrailer)
 		 	var castWrap = $('<div>').addClass('castWrap');
 		 	var castTitle= $('<h3>').addClass('infoTitle').html(`<i class="fa fa-users" aria-hidden="true"></i> Casting:`);
+		 	var closeTrailer = $('<button>').html(`<i class="fa fa-times-circle" aria-hidden="true"></i>`).addClass('closeBtn');
 		 	var backBrowse = $('<a>').html("Back to browse").addClass('backBtn sideBtn').attr('href','#');
 		 	var fullMovie =	$('<div>').addClass('about').append(titleEl,dateEl,ratingEl,overviewEl,castTitle,castWrap,backBrowse);
 		 	var trailerDisplay = $('<div>').addClass('embed-container').append(trailer);
-		 	//hide trailer:
-		 	$('.trailerWrap').css('display', 'none');
 		 	// display complete movie info:
 		 	$('.moreInfo').append(posterDiv,fullMovie);
-		 	$('.trailerWrap').append(trailerDisplay,backToTop);
+		 	$('.trailerWrap').append(closeTrailer,trailerDisplay);
 		 	// send id to trailer ajax calls:
 		 	movieApp.getTrailer(movieInfo.id);
 		 	movieApp.getCast(movieInfo.id);
@@ -156,13 +155,22 @@ movieApp.displayData = function (movies) {
 			}, 1000);
 		}
 		//watch trailer button:
-			$('.watchBtn').on('click',function(){
+			$('.watchBtn').on('click',function(e){
+				e.preventDefault();
+				$('.trailerWrap').append(closeTrailer,trailerDisplay);
+				$('section.trailer').css('visibility', 'visible');
 				$('.trailerWrap').css('display', 'block');
-				$('html, body').animate({
-   		 		scrollTop: $("#trailerWrap").offset().top
-				}, 1000);
 			});
-
+        // Close trailer
+           $('.closeBtn').on('click',function(){
+               $('section.trailer').css('visibility', 'hidden');
+               $('.trailerWrap').empty();
+            });
+           $('section.trailer').on('click',function(){
+               $('section.trailer').css('visibility', 'hidden');
+               $('.trailerWrap').empty();
+           });
+        // back to top
 			$('.backBtn').on('click', function(){
 				// scroll back to search:
 				var top = $('html, body').animate({
